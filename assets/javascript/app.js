@@ -32,32 +32,28 @@ var config = {
 
   var nextTrain;
 
-// Variables for storing user inputs
+// Variable for calculating the amount of time until the next train
+   
 
-var trainName = $("#train-Name").val().trim();
-var trainDestination = $("#train-Destination").val().trim();
-var trainTime = $("#train-Time").val().trim();
-var trainFrequency = $("#train-Frequency").val().trim();
-
+// When "Add a Train" button is clicked, append the information into the above table and store it into the Firebase database
+$("#add-train-btn").on("click", function (event) {
 
 // Object called "train"
 
    var train = {
-    name: trainName,
-    destination: trainDestination,
-    time: trainTime,
-    frequency: trainFrequency
-};
+// Variables for storing user inputs
+        trainName: $("#train-Name").val().trim(),
+        trainDestination: $("#train-Destination").val().trim(),
+        trainTime: $("#train-Time").val().trim(),
+        trainFrequency: $("#train-Frequency").val().trim()
+    };
 
+    console.log(train.trainName);
+    console.log(train.trainDestination);
+    console.log(train.trainTime);
+    console.log(train.trainFrequency);
 
-
-// When "Add a Train" button is clicked, append the information into the above table and store it into the Firebase database
-$("#add-train-btn").on("click", function () {
-
-    console.log(train.name);
-    console.log(train.destination);
-    console.log(train.time);
-    console.log(train.frequency);
+    database.ref().push(train);
 
 });
  
