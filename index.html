@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap for CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap for JS -->
+    <srctipt src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- ajax for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Link to STYLE -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Link to RESET -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <!-- Firebase link -->
+    <script src= "https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- moment.js link -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+</head>
+<body>
+   
+<!-- Start of container dive -->
+<div class="container">
+    <!-- Start of jumbotron -->
+    <div class="jumbotron col-lg-12 text-center" style="background-color:blue; color:white; font-family:Arial, Helvetica, sans-serif; font-weight: bold;">
+        <h1>TRAIN TRAVEL APP</h1>
+        <br>
+        <p>Train information for anytime to anywhere.</p>
+    </div>
+    <!-- End of Jumbotron -->
+
+    <!-- Start of first panel -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color:blue; color:white; font-family:Arial, Helvetica, sans-serif;">
+                    <h1>Current Train Schedule</h1>
+                </div>
+                <table class="table">
+                    <tr class="headers" style="font-weight:bold;">
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency(min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- End of first panel -->
+
+    <!-- Beginning of second panel -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color:blue; color:white; font-family:Arial, Helvetica, sans-serif;">
+                    <h1>Add Train</h1>
+                </div>
+                <!-- Beginning of Form -->
+                <form>
+                    <div class="form-group">
+                        <label>Train Name</label>
+                            <input id="train-Name" type="name" class="form-control">
+                        <br>
+                        <label>Destination</label>
+                            <input id="train-Destination" type="name" class="form-control">
+                        <br>
+                        <label>First Train Time (HH:MM military time)</label>
+                            <input id="train-Time" type="name" class="form-control">
+                        <br>
+                        <label>Frequency (min)</label>
+                            <input id="train-Frequency" type="name" class="form-control">
+                        <br>
+                        <!-- Beginning of adding a train button -->
+                        <button class="btn btn-primary" id="add-train-btn" style="background-color:blue; color: white; font-family:Arial, Helvetica, sans-serif;">Add a Train</button> 
+                        <!-- End of adding a train button -->
+                    </div>
+                </form>
+                <!-- End of form -->
+            </div>
+        </div>
+    </div>
+    <!-- End of second panel -->
+
+</div>
+<!-- End of container div --> 
+    
+    <script src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
