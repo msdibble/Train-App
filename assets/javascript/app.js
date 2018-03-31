@@ -41,14 +41,15 @@ $("#add-train-btn").on("click", function (event) {
     console.log(train.trainTime);
     console.log(train.trainFrequency);
 
-    database.ref().push(train);
+// Push the information into the Firebase database
 
+    database.ref().push(train);
 // Clear user input options
 
-    trainName = $("#train-Name").val("");
-    trainDestination = $("#train-Destination").val("");
-    trainTime = $("#train-Time").val("");
-    trainFrequency = $("train-Frequency").val("");
+    // trainName = $("#train-Name").val("");
+    // trainDestination = $("#train-Destination").val("");
+    // trainTime = $("#train-Time").val("");
+    // trainFrequency = $("train-Frequency").val("");
 
 });
 
@@ -56,25 +57,33 @@ $("#add-train-btn").on("click", function (event) {
 
 database.ref().on("child_added", function(childSnapshot) {
 
-// Variable for calculating time(minutes) until the arrival of the next train
+    // Variable for calculating time(minutes) until the arrival of the next train
+    
+        var tName = childSnapshot.val().trainName;
+        var tDestination = childSnapshot.val().trainDestination;
+        var tTime = childSnapshot.val().trainTime;
+        var tFrequency = childSnapshot.val().trainFrequency;
+    
+    // Variable for holding the first time added to the table
+    
+        var firstTime = moment(trainTime, "hh:mm").subtract(1, "days");
+    
+    // Variable for holding the current time
+    
+        var currentTime = moment().unix();
+        console.log(currentTime);
+    
+    // Variable for calculating the difference between times
+    
+        // var timeDifference = currentTime - trainTime;
+            
+    // Add the information to the above table
 
-    var tName = childSnapshot.val().train;
-    var tDestination = childSnapshot.val().trainDestination;
-    var tTime = childSnapshot.val().trainTime;
-    var tFrequency = childSnapshot.val().trainFrequency;
+        var table = $(".table").append("<tr>");
+    
+        table.append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td></tr>");
+    
+    });
 
-// Variable for holding the first time added to the table
-
-    var firstTime = moment()
-
-// Variable for holding the current time
-
-    var currentTime = moment();
-    console.log(currentTime);
-
-// Variable for 
-
-
-});
  
 });
