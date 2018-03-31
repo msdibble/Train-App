@@ -75,13 +75,21 @@ database.ref().on("child_added", function(childSnapshot) {
     
     // Variable for calculating the difference between times
     
-        // var timeDifference = currentTime - trainTime;
+        var timeDifference = currentTime - trainTime;
+
+    // Time remaining until the next train
+
+        var trainTimeRemain = timeDifference % trainFrequency;
+
+    // Time until the next train
+
+        var timeToNextTrain = trainFrequency - trainTimeRemain;
             
     // Add the information to the above table
 
         var table = $(".table").append("<tr>");
     
-        table.append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td></tr>");
+        table.append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + "</td><td>" + trainTimeRemain + "</td><td>" + timeToNextTrain + "</td><tr>");
     
     });
 
